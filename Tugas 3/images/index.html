@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #222;
+    }
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    nav a:hover {
+      color: #e50914;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #a2050c;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .hero img:hover {
+      transform: scale(1.1);
+      filter: brightness(1.3);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+      color: #a2050c;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0.5rem 0 1.5rem;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      background-color: #a2050c;
+      border: none;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .cta-btn:hover::after {
+      content: " :)";
+    }
+    .cta-btn:hover {
+      background-color: #a78208;
+    }
+
+    /* My Favorite Things Grid */
+    .favorites {
+      padding: 3rem 2rem;
+      background: #e4e1e1;
+      color: #fff7f7;
+    }
+    .favorites h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #490000;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .card {
+      border-radius: 15px;
+      overflow: hidden;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    .text-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .text-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Warna untuk card teks */
+    .red { background: #631010; }
+    .black  { background: #1e1e1e; }
+    .orange   { background: #7a3304; }
+    .blue { background: #0a3d62; }
+
+    /* Spanning cards */
+    .span-row {
+      grid-row: span 2;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer h2 {
+      color: #a2050c;
+    }
+    footer p {
+      margin-top: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        text-align: left;
+      }
+      .hero img {
+        margin-right: 2rem;
+      }
+    }
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .span-row {
+        grid-row: span 1;
+      }
+      /* Sembunyikan card extra di mobile */
+      .extra {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">What Kei's About?</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <img src="dog Iero.jpg.jpg" alt="Profile Picture">
+    <div class="hero-text">
+      <h1>MISSING DOG</h1>
+      <p>
+        Her name is Keidy. She's already on the fifth semester majoring in interactive design major. She likes every color,
+        because theyre all beautiful. Trying her best to design better. Loves to create something unusual, like a racoon tail 
+        she made for her boyfriend. Last seen on Jonggol. Please call as soon as you find her.
+      </p>
+      <button class="cta-btn" onclick="window.location.href='mailto:s37230022@student.ubm.ac.id'">Contact Me</button>
+    </div>
+  </section>
+
+  <!-- My Favorite Things -->
+  <section class="favorites" id="favorites">
+    <h2>Their Favorite Albums</h2>
+    <div class="grid">
+      <div class="card text-card red">
+        <h3>REVENGE</h3>
+        <p>A gritty, emotional blend of punk and post-hardcore, telling a 
+            revenge-driven love story filled with dark romance, anger, and desperation.</p>
+      </div>
+      <div class="card image-card">
+        <img src="black parade.jpg" alt="THE BLACK PARADE">
+      </div>
+      <div class="card image-card span-row">
+        <img src="revenge.jpg" alt="REVENGE">
+      </div>
+      <div class="card image-card">
+        <img src="danger days.jpg" alt="DANGER DAYS">
+      </div>
+      <div class="card text-card black">
+        <h3>THE BLACK PARADE</h3>
+        <p>A theatrical rock opera exploring death, grief, and legacy, wrapped in grand, 
+            dramatic instrumentation and haunting anthems.</p>
+      </div>
+      <div class="card text-card orange">
+        <h3>DANGER DAYS</h3>
+        <p>A colorful, dystopian concept album set in a post-apocalyptic future, mixing
+             punk energy with pop sensibility and rebellious optimism.</p>
+      </div>
+
+      <!-- Extra Cards (hilang di mobile) -->
+      <div class="card image-card extra">
+        <img src="three cheers.jpg" alt="THREE CHEERS FOR SWEET REVENGE">
+      </div>
+      <div class="card text-card blue extra">
+        <h3>THREE CHEERS</h3>
+        <p>The breakthrough album that defined their sound, mixing raw emotion, 
+          aggressive riffs, and darkly poetic lyrics into unforgettable anthems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <h2>Human Stuff</h2>
+    <p>Listens to MCR ✶ Watches Philomena Cunk ✶ Minecraft</p>
+  </footer>
+</body>
+</html>
